@@ -123,7 +123,7 @@ client.on('ready', () => {
     embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
     embed.addField('Ready', 'I am online and at your service, Jett!');
     embed.setTimestamp();
-    client.users.find('id', '615437464173281291').send({ embed });
+    client.users.find('id', '625658409403940868').send({ embed });
   */
 
     //client.user.setGame({name: prefix + 'help'});
@@ -163,7 +163,7 @@ client.on('message', message => {
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@615437464173281291>', true);
+        embed.addField('Creator', '<@625658409403940868>', true);
         embed.addField("Invite", 'http://bit.ly/inviteChaoticStreams', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
@@ -241,11 +241,11 @@ client.on('message', message => {
         // Instead of posting a new message every interval, it just edits the message so there is always one.
 
         // Check perms and channel.
-        if (message.author.id != 615437464173281291) {
+        if (message.author.id != 625658409403940868) {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
-        if (message.channel.id != 371013264525492225) {
+        if (message.channel.id != 625658409403940868) {
             message.channel.send('I can\'t execute this command outside of the Dusktopia #recent-list channel, sorry!');
             return;
         }
@@ -272,7 +272,7 @@ client.on('message', message => {
     } else
 
     if (command === "restart") {
-        if (!message.author.id == 615437464173281291) {
+        if (!message.author.id == 625658409403940868) {
               message.reply(":x: Only  Chaos can restart the bot.");
               return;
           }
