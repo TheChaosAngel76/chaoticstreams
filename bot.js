@@ -149,10 +149,10 @@ client.on('message', message => {
     if (command === 'ping') {
         message.channel.send("Pong!");
     } else
-       if (command === 'neu') {
+       if (command === 'king') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
-            embed.addField("Discussion", 'Sorry noch keine Neuigkeiten !!!');
+            embed.addField("NEWS", 'Neuse Software ist Installiert, Buquets werden nach und nach Eingepflegt !!!  Noch keine Info wann es fertig ist');
             message.channel.send({ embed });
     } else
     if (command === 'hello' || command === 'hi') {
