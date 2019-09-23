@@ -149,6 +149,12 @@ client.on('message', message => {
     if (command === 'ping') {
         message.channel.send("Pong!");
     } else
+       if (command === 'neu') {
+       let embed = new Discord.RichEmbed();
+            embed.setColor("#ffff00");
+            embed.addField("Discussion", 'Sorry noch keine Neuigkeiten !!!');
+            message.channel.send({ embed });
+    } else
     if (command === 'hello' || command === 'hi') {
         message.channel.send(`${greetings[Math.floor(Math.random()*(greetings.length))]} ${message.author.username}!`);
     } else
