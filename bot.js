@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const request = require('request');
 const client = new Discord.Client();
-const prefix = 'k.';
+const prefix = '!';
 
 // Start Glitch stuff ==========>
 /*
@@ -30,29 +30,11 @@ const commands = [
         "Talk : Returns random phrases.",
         "Hello : Says hello back.",
         "Ping : Returns 'pong'.",
-        "Info : Returns info about KhanBot.",
+        "Info : Returns info about Chaotic Bot.",
         "Uptime : Returns time since I last launched.",
     ],
-    // Math
-    [
-        "Add <2+ values> : Adds all given values.",
-        "Sub/subtract <2+ values> : Multiples all given values.",
-        "Mult/multiply <2+ values> : Multiplies all given values.",
-        "Div/divide <2+ values> : Divides all given values.",
-        "Pow/power <base> <power> : Squares a given value.",
-        "Sqrt <1 value> : Returns square root of value.",
-
-    ],
-    // Khan Data
-    [
-        "UserInfo <username> : Returns a user's Khan Academy stats.",
-        "Discussion <username> : Returns a user's top discussion stats.",
-        "Badges <username> : Returns a user's badge counts.",
-        "Browse <page> : Displays the top KA program on the hotlist.",
-        "ProgramData <program-id> : Returns a program\'s data.",
-        "UserPrograms <username> : Returns a user's projects stats.",
-        "BadgeInfo <badge-name> : Returns info about a given badge."
-    ],
+   
+   
 ];
 
 var responses = [
@@ -96,15 +78,7 @@ var greetings = [
 
 ];
 
-var getKAData = function(message, api, user, callback) {
-    request(api + user, function(error, response, body) {
-        if (!JSON.parse(body) || error) {
-            message.channel.sendMessage(`Error with a **\`getKAData\`** request: ${error}`);
-            return;
-        }
-        callback(body);
-    });
-};
+
 
 var millisToTime = function(milliseconds) {
     let x = milliseconds / 1000;
@@ -123,9 +97,6 @@ var totalTime = 0;
 var statusNum = 0;
 var mode;
 
-var userApi = "https://www.khanacademy.org/api/internal/user/profile?username=";
-var programApi = 'https://www.khanacademy.org/api/internal/show_scratchpad?scratchpad_id=';
-var labsApi = 'https://www.khanacademy.org/api/labs/scratchpads/';
 
 var status = [
     'online',
@@ -154,7 +125,7 @@ client.on('ready', () => {
     embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
     embed.addField('Ready', 'I am online and at your service, Jett!');
     embed.setTimestamp();
-    client.users.find('id', '218397146049806337').send({ embed });
+    client.users.find('id', '615437464173281291').send({ embed });
   */
 
     //client.user.setGame({name: prefix + 'help'});
