@@ -218,8 +218,6 @@ client.on('message', message => {
             let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("Random Stuff", commands[0]);
-            embed.addField("Math Operations", commands[1]);
-            embed.addField("Khan Data", commands[2]);
             message.channel.send({ embed });
         }
         else {
