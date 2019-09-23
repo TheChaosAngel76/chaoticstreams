@@ -121,9 +121,9 @@ client.on('ready', () => {
     let embed = new Discord.RichEmbed();
     embed.setColor('#0DB221');
     embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
-    embed.addField('Ready', 'I am online and at your service, Jett!');
+    embed.addField('Ready', 'I am online and at your service, CHAOS!');
     embed.setTimestamp();
-    client.users.find('id', '625658409403940868').send({ embed });
+    client.users.find('id', '615437464173281291').send({ embed });
   */
 
     //client.user.setGame({name: prefix + 'help'});
