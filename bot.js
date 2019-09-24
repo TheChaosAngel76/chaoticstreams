@@ -152,8 +152,9 @@ client.on('message', message => {
        if (command === 'king') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
-            embed.addField("NEWS", 'Neuse Software ist Installiert, Buquets werden nach und nach Eingepflegt !!!  Noch keine Info wann es fertig ist');
-            message.channel.send({ embed });
+            embed.addField("NEWS", 'Neuse Software ist Installiert, Buquets werden nach und nach Eingepflegt !!!');
+            embed.addField('Preise', '-----------'); 
+         message.channel.send({ embed });
     } else
     if (command === 'hello' || command === 'hi') {
         message.channel.send(`${greetings[Math.floor(Math.random()*(greetings.length))]} ${message.author.username}!`);
