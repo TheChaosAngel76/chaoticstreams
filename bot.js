@@ -60,6 +60,15 @@ const commands = [
          "    💥95 € => 12 Monate",
     "🛫🛫🛫🛫🛫🛫",
     ],
+   [
+        
+         
+    "🥊komplette liste Preise:",
+         "    💥35 € => 3 Monate",
+         "    💥50 € => 6 Monate",
+         "    💥85 € => 12 Monate",
+    "🛫🛫🛫🛫🛫🛫",
+    ],
 ];
 
 var responses = [
@@ -201,6 +210,13 @@ client.on('message', message => {
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
            embed.addField("PREISE", commands[2]);
+         message.channel.send({ embed });
+    } else
+       if (command === 'chaosiptv') {
+       let embed = new Discord.RichEmbed();
+            embed.setColor("#ffff00");
+            embed.addField("NEWS", 'Zurzeit keine');
+           embed.addField("PREISE", commands[3]);
          message.channel.send({ embed });
     } else
     if (command === 'info') {
