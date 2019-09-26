@@ -196,6 +196,13 @@ client.on('message', message => {
     if (command === 'uptime') {
         message.channel.send(':clock2: **KhanBot** has been online for ' + millisToTime(totalTime) + '.');
     } else
+     if (command === 'king') {
+       let embed = new Discord.RichEmbed();
+            embed.setColor("#ffff00");
+            embed.addField("NEWS", 'Zurzeit keine');
+           embed.addField("PREISE", commands[2]);
+         message.channel.send({ embed });
+    } else
     if (command === 'info') {
         let embed = new Discord.RichEmbed();
         embed.setThumbnail(client.user.avatarURL);
