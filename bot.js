@@ -188,7 +188,7 @@ client.on('message', message => {
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '@625658409403940868', true);
+        embed.addField('Creator', '<@625658409403940868>', true);
         embed.addField("Invite", 'http://bit.ly/inviteChaoticStreams', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
