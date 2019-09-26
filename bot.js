@@ -53,7 +53,6 @@ const commands = [
  ];
 const chaos = [
   [
-    
     "    💥30 € => 3 Monate",
     "    💥50 € => 6 Monate",
     "    💥85 € => 12 Monate",
