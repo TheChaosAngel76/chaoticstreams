@@ -207,13 +207,13 @@ client.on('message', message => {
         message.channel.send({ embed });
     } else
 
- if (command === 'king') {
+    if (command === 'king') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
            embed.addField("PREISE", commands[2]);
          message.channel.send({ embed });
-     
+    }
     } else
     if (command === 'add') {
         if (args.length > 0) {
