@@ -61,9 +61,7 @@ const commands = [
     "🛫🛫🛫🛫🛫🛫",
     ],
    [
-        
-         
-    "🥊komplette liste Preise:",
+          "🥊komplette liste Preise:",
          "    💥35 € => 3 Monate",
          "    💥50 € => 6 Monate",
          "    💥85 € => 12 Monate",
@@ -209,6 +207,8 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
+       embed.addField("", '');
+        embed.addField("Chaotic Streams Apps", 'http://chaotic-streams.de/CS/');
            embed.addField("PREISE", commands[2]);
          message.channel.send({ embed });
     } else
@@ -216,6 +216,8 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
+         embed.addField("Chaotic Streams Apps", 'http://chaotic-streams.de/CS/');
+           embed.addField("Dashbourd", 'http://anonymous.dashboard.streamtv.to');
            embed.addField("PREISE", commands[3]);
          message.channel.send({ embed });
     } else
