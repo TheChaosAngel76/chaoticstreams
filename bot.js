@@ -51,6 +51,7 @@ const commands = [
     "🛫🛫🛫🛫🛫🛫",
     ],
  ];
+
 const chaos = [
   [
     "    💥30 € => 3 Monate",
@@ -267,7 +268,7 @@ client.on('message', message => {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
-        if (message.channel.id != 626662222462189568) {
+        if (message.channel.id != 625658409403940868) {
             message.channel.send('I can\'t execute this command outside of the Dusktopia #recent-list channel, sorry!');
             return;
         }
