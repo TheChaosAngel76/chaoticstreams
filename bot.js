@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const request = require('request');
 const client = new Discord.Client();
-const prefix = '!';
+const prefix = 'k.';
 
 // Start Glitch stuff ==========>
 /*
@@ -28,13 +28,22 @@ const commands = [
         "Talk : Returns random phrases.",
         "Hello : Says hello back.",
         "Ping : Returns 'pong'.",
-        "Info : Returns info about Chaotic Bot.",
+        "Info : Returns info about KhanBot.",
         "Uptime : Returns time since I last launched.",
     ],
-  ];
- const king = [
-  [
-     "🥊de + vod Preise:",
+    // Math
+    [
+        "Add <2+ values> : Adds all given values.",
+        "Sub/subtract <2+ values> : Multiples all given values.",
+        "Mult/multiply <2+ values> : Multiplies all given values.",
+        "Div/divide <2+ values> : Divides all given values.",
+        "Pow/power <base> <power> : Squares a given value.",
+        "Sqrt <1 value> : Returns square root of value.",
+
+    ],
+   
+    [
+          "🥊de + vod Preise:",
          "    💥35 € => 3 Monate",
          "    💥50 € => 6 Monate",
          "    💥75 € => 12 Monate",
@@ -50,16 +59,14 @@ const commands = [
          "    💥95 € => 12 Monate",
     "🛫🛫🛫🛫🛫🛫",
     ],
- ];
-
-const chaos = [
   [
     "    💥30 € => 3 Monate",
     "    💥50 € => 6 Monate",
     "    💥85 € => 12 Monate",
-    "🛫🛫🛫🛫🛫🛫",
+    "🛫🛫🛫🛫🛫🛫"
+   
     ],
- ];
+];
 
 var responses = [
     "Hey.",
@@ -102,10 +109,36 @@ var greetings = [
 
 ];
 
+var getKAData = function(message, api, user, callback) {
+    request(api + user, function(error, response, body) {
+        if (!JSON.parse(body) || error) {
+            message.channel.sendMessage(`Error with a **\`getKAData\`** request: ${error}`);
+            return;
+        }
+        callback(body);
+    });
+};
 
+var millisToTime = function(milliseconds) {
+    let x = milliseconds / 1000;
+    let s = Math.floor(x % 60);
+    x /= 60;
+    let m = Math.floor(x % 60);
+    x /= 60;
+    let h = Math.floor(x % 24);
+    //x /= 24;
+    //let d = Math.floor(x);
 
+    return h + ' Hours, ' + m + ' Minutes, ' + s + " Seconds";
+};
 
+var totalTime = 0;
+var statusNum = 0;
+var mode;
 
+var userApi = "https://www.khanacademy.org/api/internal/user/profile?username=";
+var programApi = 'https://www.khanacademy.org/api/internal/show_scratchpad?scratchpad_id=';
+var labsApi = 'https://www.khanacademy.org/api/labs/scratchpads/';
 
 var status = [
     'online',
@@ -132,7 +165,7 @@ client.on('ready', () => {
     let embed = new Discord.RichEmbed();
     embed.setColor('#0DB221');
     embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
-    embed.addField('Ready', 'I am online and at your service, CHAOS!');
+    embed.addField('Ready', 'I am online and at your service, Chaos!');
     embed.setTimestamp();
     client.users.find('id', '615437464173281291').send({ embed });
   */
@@ -160,20 +193,6 @@ client.on('message', message => {
     if (command === 'ping') {
         message.channel.send("Pong!");
     } else
-       if (command === 'king') {
-       let embed = new Discord.RichEmbed();
-            embed.setColor("#ffff00");
-            embed.addField("NEWS", 'Zurzeit keine');
-            embed.addField('Preise', king[0]);
-         message.channel.send({ embed });
-    } else
-       if (command === 'chaosiptv') {
-       let embed = new Discord.RichEmbed();
-            embed.setColor("#ffff00");
-            embed.addField("NEWS", 'Zurzeit keine');
-            embed.addField('Preise', chaos[0]);
-         message.channel.send({ embed });
-    } else
     if (command === 'hello' || command === 'hi') {
         message.channel.send(`${greetings[Math.floor(Math.random()*(greetings.length))]} ${message.author.username}!`);
     } else
@@ -181,20 +200,65 @@ client.on('message', message => {
         message.channel.send(responses[Math.round(Math.random(0, 1)*10)]);
     } else
     if (command === 'uptime') {
-        message.channel.send(':clock2: **Chaotic Streams** has been online for ' + millisToTime(totalTime) + '.');
+        message.channel.send(':clock2: **Chaos Bot** has been online for ' + millisToTime(totalTime) + '.');
     } else
     if (command === 'info') {
         let embed = new Discord.RichEmbed();
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@625658409403940868>', true);
-        embed.addField("Invite", 'http://bit.ly/inviteChaoticStreams', true);
+        embed.addField('Creator', '<@218397146049806337>', true);
+        embed.addField("Invite", 'http://bit.ly/inviteKhanbot', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
     } else
 
-    
+ if (command === 'king') {
+       let embed = new Discord.RichEmbed();
+            embed.setColor("#ffff00");
+            embed.addField("NEWS", 'Zurzeit keine');
+           embed.addField("PREISE", commands[2]);
+         message.channel.send({ embed });
+     
+    } else
+    if (command === 'add') {
+        if (args.length > 0) {
+            let numArray = args.map(n=> +n);
+            let total = numArray.reduce( (p, c) => +p + +c);
+            message.channel.send(total);
+        }
+    } else
+    if (command === 'sub' || command === 'subtract') {
+        if (args.length > 0) {
+            let numArray = args.map(n=> +n);
+            let total = numArray.reduce( (p, c) => +p - +c);
+            message.channel.send(total);
+        }
+    } else
+    if (command === 'mult' || command === 'multiply') {
+        if (args.length > 0) {
+            let numArray = args.map(n=> +n);
+            let total = numArray.reduce( (p, c) => +p * +c);
+            message.channel.send(total);
+        }
+    } else
+    if (command === 'div' || command === 'divide') {
+        if (args.length > 0) {
+            let numArray = args.map(n=> +n);
+            let total = numArray.reduce( (p, c) => +p / +c);
+            message.channel.send(total);
+        }
+    } else
+    if (command === 'pow' || command === 'power') {
+        if (args.length > 0) {
+            message.channel.send(+Math.pow(args[0], args[1]));
+        }
+    } else
+    if (command === 'sqrt') {
+        if (args.length > 0) {
+            message.channel.send(+Math.sqrt(args[0]));
+        }
+    } else
 
     if (command === 'help') {
         if (args[0] === 'userinfo' || args[0] === 'userInfo') {
@@ -253,6 +317,9 @@ client.on('message', message => {
         }
     } else
 
+
+
+
    
 
     if (command === 'update') {
@@ -268,35 +335,16 @@ client.on('message', message => {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
-        if (message.channel.id != 625658409403940868) {
+        if (message.channel.id != 626662222462189568) {
             message.channel.send('I can\'t execute this command outside of the Dusktopia #recent-list channel, sorry!');
             return;
         }
         // Check arg.
-        if (args[0] === 'stop') {
-            mode = 'stop';
-        } else
-        if (args[0] === 'start') {
-            mode = 'start';
-        }
-
-       
-
-        let currentTime;
-        let run = setInterval(function() {
-            currentTime = new Date().getSeconds(); // CHANGE
-            if (currentTime % 10 === 0) {
-                getProgram();
-            }
-            if (mode === 'stop') {
-                clearInterval(run);
-            }
-        }, 1000);
-    } else
+     
 
     if (command === "restart") {
         if (!message.author.id == 625658409403940868) {
-              message.reply(":x: Only  Chaos can restart the bot.");
+              message.reply(":x: Only Jett can restart the bot.");
               return;
           }
           message.channel.send("<a:loadinggif:406945578967367680> Restarting");
