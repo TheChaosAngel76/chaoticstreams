@@ -208,7 +208,7 @@ client.on('message', message => {
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@218397146049806337>', true);
+        embed.addField('Creator', '<@626662222462189568>', true);
         embed.addField("Invite", 'http://bit.ly/inviteKhanbot', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
@@ -300,8 +300,6 @@ client.on('message', message => {
             let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("Random Stuff", commands[0]);
-            embed.addField("Math Operations", commands[1]);
-            embed.addField("Khan Data", commands[2]);
             message.channel.send({ embed });
         }
         else {
@@ -643,7 +641,7 @@ client.on('message', message => {
         // Instead of posting a new message every interval, it just edits the message so there is always one.
 
         // Check perms and channel.
-        if (message.author.id != 218397146049806337) {
+        if (message.author.id != 626662222462189568) {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
@@ -692,7 +690,7 @@ client.on('message', message => {
     } else
 
     if (command === "restart") {
-        if (!message.author.id == 218397146049806337) {
+        if (!message.author.id == 626662222462189568) {
               message.reply(":x: Only Jett can restart the bot.");
               return;
           }
