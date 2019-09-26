@@ -32,7 +32,12 @@ const commands = [
         "Uptime : Returns time since I last launched.",
     ],
    
-   
+  [
+komplette liste Preise:
+💥40 € => 3 Monate
+💥60 € => 6 Monate
+💥90 € => 12 Monate
+   ],
 ];
 
 var responses = [
@@ -152,8 +157,8 @@ client.on('message', message => {
        if (command === 'king') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
-            embed.addField("NEWS", 'Neuse Software ist Installiert, Buquets werden nach und nach Eingepflegt !!!');
-            embed.addField('Preise', '-----------'); 
+            embed.addField("NEWS", 'Zurzeit keine');
+            embed.addField('Preise', commands[1]); 
          message.channel.send({ embed });
     } else
     if (command === 'hello' || command === 'hi') {
