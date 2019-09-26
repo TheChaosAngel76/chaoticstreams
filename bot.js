@@ -35,9 +35,9 @@ const commands = [
  const king = [
   [
          "🥊komplette liste Preise:",
-         "T💥40 € => 3 Monate"
-         "💥60 € => 6 Monate"
-         "💥90 € => 12 Monate"
+         "T💥40 € => 3 Monate",
+         "💥60 € => 6 Monate",
+         "💥90 € => 12 Monate",
     ],
  ];
 
