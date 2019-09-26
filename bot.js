@@ -167,7 +167,7 @@ client.on('message', message => {
             embed.addField('Preise', king[0]);
          message.channel.send({ embed });
     } else
- if (command === 'chaosiptv') {
+       if (command === 'chaosiptv') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
