@@ -34,10 +34,10 @@ const commands = [
   ];
  const king = [
   [
-         "🥊komplette liste Preise:",
-         "T💥40 € => 3 Monate",
-         "💥60 € => 6 Monate",
-         "💥90 € => 12 Monate",
+         "    🥊komplette liste Preise:",
+         "    💥40 € => 3 Monate",
+         "    💥60 € => 6 Monate",
+         "    💥90 € => 12 Monate",
     ],
  ];
 
@@ -159,7 +159,7 @@ client.on('message', message => {
        if (command === 'king') {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
-            embed.addField("NEWS", 'Zurzeit keine');
+            embed.addField("NEWS", 'Zurzeit keine',);
             embed.addField('Preise', king[0]);
          message.channel.send({ embed });
     } else
