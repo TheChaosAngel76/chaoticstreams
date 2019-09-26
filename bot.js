@@ -31,6 +31,8 @@ const commands = [
         "Info : Returns info about Chaotic Bot.",
         "Uptime : Returns time since I last launched.",
     ],
+  ];
+ const king = [
   [
          "🥊komplette liste Preise:",
          "T💥40 € => 3 Monate"
@@ -158,7 +160,7 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
-            embed.addField('Preise', commands[1]);
+            embed.addField('Preise', king[0]);
          message.channel.send({ embed });
     } else
     if (command === 'hello' || command === 'hi') {
