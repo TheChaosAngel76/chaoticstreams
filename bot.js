@@ -31,11 +31,10 @@ const commands = [
         "Info : Returns info about Chaotic Bot.",
         "Uptime : Returns time since I last launched.",
     ],
-   ];
-const command = [  
-[
-    
-komplette liste Preise:
+ ];
+    const command = [  
+         [
+    komplette liste Preise:
 💥40 € => 3 Monate
 💥60 € => 6 Monate
 💥90 € => 12 Monate
