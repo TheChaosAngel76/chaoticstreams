@@ -51,7 +51,15 @@ const commands = [
     "🛫🛫🛫🛫🛫🛫",
     ],
  ];
-
+const chaos = [
+  [
+    
+    "    💥30 € => 3 Monate",
+    "    💥50 € => 6 Monate",
+    "    💥85 € => 12 Monate",
+    "🛫🛫🛫🛫🛫🛫",
+    ],
+ ];
 
 var responses = [
     "Hey.",
@@ -96,22 +104,7 @@ var greetings = [
 
 
 
-var millisToTime = function(milliseconds) {
-    let x = milliseconds / 1000;
-    let s = Math.floor(x % 60);
-    x /= 60;
-    let m = Math.floor(x % 60);
-    x /= 60;
-    let h = Math.floor(x % 24);
-    //x /= 24;
-    //let d = Math.floor(x);
 
-    return h + ' Hours, ' + m + ' Minutes, ' + s + " Seconds";
-};
-
-var totalTime = 0;
-var statusNum = 0;
-var mode;
 
 
 var status = [
@@ -128,7 +121,7 @@ client.on('ready', () => {
     ];
     client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
     client.user.setUsername('Chaotic Streams');
-    console.log('I am ready Jett!');
+    console.log('I am ready Chaos!');
     console.log(`I have started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 
     setInterval(function() {
@@ -174,6 +167,13 @@ client.on('message', message => {
             embed.addField('Preise', king[0]);
          message.channel.send({ embed });
     } else
+ if (command === 'chaosiptv') {
+       let embed = new Discord.RichEmbed();
+            embed.setColor("#ffff00");
+            embed.addField("NEWS", 'Zurzeit keine');
+            embed.addField('Preise', chaos[0]);
+         message.channel.send({ embed });
+    } else
     if (command === 'hello' || command === 'hi') {
         message.channel.send(`${greetings[Math.floor(Math.random()*(greetings.length))]} ${message.author.username}!`);
     } else
@@ -188,7 +188,7 @@ client.on('message', message => {
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@625658409403940868>', true);
+        embed.addField('Creator', '@625658409403940868', true);
         embed.addField("Invite", 'http://bit.ly/inviteChaoticStreams', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
@@ -268,7 +268,7 @@ client.on('message', message => {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
-        if (message.channel.id != 625658409403940868) {
+        if (message.channel.id != 626662222462189568) {
             message.channel.send('I can\'t execute this command outside of the Dusktopia #recent-list channel, sorry!');
             return;
         }
