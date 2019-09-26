@@ -43,13 +43,22 @@ const commands = [
     ],
     // Khan Data
     [
-        "UserInfo <username> : Returns a user's Khan Academy stats.",
-        "Discussion <username> : Returns a user's top discussion stats.",
-        "Badges <username> : Returns a user's badge counts.",
-        "Browse <page> : Displays the top KA program on the hotlist.",
-        "ProgramData <program-id> : Returns a program\'s data.",
-        "UserPrograms <username> : Returns a user's projects stats.",
-        "BadgeInfo <badge-name> : Returns info about a given badge."
+        
+          "🥊de + vod Preise:",
+         "    💥35 € => 3 Monate",
+         "    💥50 € => 6 Monate",
+         "    💥75 € => 12 Monate",
+    "🛫🛫🛫🛫🛫🛫",
+    "🥊de + xxx +vod Preise:",
+         "    💥40 € => 3 Monate",
+         "    💥55 € => 6 Monate",
+         "    💥80 € => 12 Monate",
+    "🛫🛫🛫🛫🛫🛫",
+    "🥊komplette liste Preise:",
+         "    💥45 € => 3 Monate",
+         "    💥65 € => 6 Monate",
+         "    💥95 € => 12 Monate",
+    "🛫🛫🛫🛫🛫🛫",
     ],
 ];
 
@@ -138,8 +147,8 @@ client.on('ready', () => {
         `${client.channels.size} Channels`
     ];
     client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
-    client.user.setUsername('KhanBot');
-    console.log('I am ready Jett!');
+    client.user.setUsername('Chaostic Streams');
+    console.log('I am ready Chaos!');
     console.log(`I have started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
 
     setInterval(function() {
@@ -150,9 +159,9 @@ client.on('ready', () => {
     let embed = new Discord.RichEmbed();
     embed.setColor('#0DB221');
     embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
-    embed.addField('Ready', 'I am online and at your service, Jett!');
+    embed.addField('Ready', 'I am online and at your service, Chaos!');
     embed.setTimestamp();
-    client.users.find('id', '218397146049806337').send({ embed });
+    client.users.find('id', '615437464173281291').send({ embed });
   */
 
     //client.user.setGame({name: prefix + 'help'});
