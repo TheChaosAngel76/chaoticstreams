@@ -31,6 +31,12 @@ const commands = [
         "Info : Returns info about Chaotic Bot.",
         "Uptime : Returns time since I last launched.",
     ],
+  [
+         "🥊komplette liste Preise:",
+         "T💥40 € => 3 Monate"
+         "💥60 € => 6 Monate"
+         "💥90 € => 12 Monate"
+    ],
  ];
 
 
@@ -152,7 +158,7 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
-            embed.addField('Preise', command[0]);
+            embed.addField('Preise', commands[1]);
          message.channel.send({ embed });
     } else
     if (command === 'hello' || command === 'hi') {
