@@ -32,14 +32,7 @@ const commands = [
         "Uptime : Returns time since I last launched.",
     ],
  ];
-    const command = [  
-         [
-    komplette liste Preise:
-💥40 € => 3 Monate
-💥60 € => 6 Monate
-💥90 € => 12 Monate
-   ],
-];
+
 
 var responses = [
     "Hey.",
