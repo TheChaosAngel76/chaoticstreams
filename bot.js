@@ -207,6 +207,7 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
+       embed.addField();
              embed.addField("Chaotic Streams Apps", 'http://chaotic-streams.de/CS/');
            embed.addField("PREISE", commands[2]);
          message.channel.send({ embed });
@@ -225,8 +226,7 @@ client.on('message', message => {
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@626662222462189568>', true);
-        embed.addField("Invite", 'http://bit.ly/inviteKhanbot', true);
+        
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
     } else
