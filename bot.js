@@ -207,8 +207,7 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed();
             embed.setColor("#ffff00");
             embed.addField("NEWS", 'Zurzeit keine');
-       embed.addField();
-             embed.addField("Chaotic Streams Apps", 'http://chaotic-streams.de/CS/');
+            embed.addField("Chaotic Streams Apps", 'http://chaotic-streams.de/CS/');
            embed.addField("PREISE", commands[2]);
          message.channel.send({ embed });
     } else
